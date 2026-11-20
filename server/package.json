@@ -1,0 +1,16 @@
+{
+  "name": "archsynth-server",
+  "version": "1.0.0",
+  "description": "AI Architecture, 3D Walkthrough and Construction Blueprint Engine",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3"
+  }
+}
