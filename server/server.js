@@ -151,6 +151,12 @@ app.get('*', (req, res, next) => {
   res.sendFile(path.join(clientDistPath, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`[ArchSynth Engine] Full-Stack App running on http://localhost:${PORT}`);
-});
+// Vercel imports this module as a serverless function. Keep the local
+// development server behaviour, but never bind a port inside that runtime.
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`[ArchSynth Engine] Full-Stack App running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
